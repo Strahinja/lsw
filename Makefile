@@ -39,6 +39,8 @@ install: all
 	@mkdir -p ${DESTDIR}${PREFIX}/bin
 	@cp -f lsw ${DESTDIR}${PREFIX}/bin
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/lsw
+	@cp -f winlist ${DESTDIR}${PREFIX}/bin
+	@chmod 755 ${DESTDIR}${PREFIX}/bin/winlist
 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1/lsw.1
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	@sed "s/VERSION/${VERSION}/g" < lsw.1 > ${DESTDIR}${MANPREFIX}/man1/lsw.1
@@ -47,6 +49,7 @@ install: all
 uninstall:
 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
 	@rm -f ${DESTDIR}${PREFIX}/bin/lsw
+	@rm -f ${DESTDIR}${PREFIX}/bin/winlist
 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 	@rm -f ${DESTDIR}${MANPREFIX}/man1/lsw.1
 
