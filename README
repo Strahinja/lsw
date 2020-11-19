@@ -3,6 +3,12 @@ lsw - list windows
 lsw prints the title and XID of windows to stdout.
 
 
+Changes to the original
+-----------------------
+Added winlist - a script which uses lsw and wmctrl to display a list of windows
+and switch to window.
+
+
 Requirements
 ------------
 In order to build lsw you need the Xlib header files.
