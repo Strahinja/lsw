@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#WIN_ID=$(lsw | sed -e 's/\([^ ]\+\)\(.*\)/\2 [\1]/g' | dmenu | sed -e 's/ *\(\S.*\S\) \+\[.*\]$/\1/g')
+WIN_ID=$(lsw | sed -e 's/\(\S\+\)\(.*\)/\2 [\1]/g' | dmenu -p "Select window:" | sed -e 's/.*\[\(.*\)\]$/\1/g')
+[ ! -z "$WIN_ID" ] && wmctrl -i -a "$WIN_ID"
+
